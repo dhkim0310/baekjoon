@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+	int num[10];
+	int i;
+	int reminders[42] = { 0 };
+
+	for (i = 0; i < 10; i++) {
+		scanf("%d", &num[i]);
+		int reminder = num[i] % 42;
+		reminders[reminder]++;
+	}
+
+	int different_reminder = 0;
+	for (int i = 0; i < 42; i++) {
+		if (reminders[i] > 0) {
+			different_reminder++;
+		}
+	}
+
+	printf("%d\n", different_reminder);
+
+	return 0;
+}
