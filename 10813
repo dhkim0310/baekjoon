@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int ball[100]; // 배열의 크기를 100으로
+    int N; // 변수 지정
+    int M; 
+    int j, k, temp;
+    scanf("%d", &N); 
+    for (int i = 0; i < N; i++)
+        ball[i] = i + 1; // i 바구니에 i + 1번 공을 넣는다
+    scanf("%d", &M);
+    for (int i = 0; i < M; i++) { 
+        scanf("%d %d", &j, &k);
+        temp = ball[j - 1]; // temp에 j-1 바구니에 있는 공을 넣는다. 
+        ball[j - 1] = ball[k - 1]; // j - 1바구니에 k-1 바구니의 공을 넣는다. 
+        ball[k - 1] = temp; // k-1 바구니에 k -1 바구니의 공을 넣는다.
+    }
+    for (int i = 0; i < N; i++) 
+        printf("%d ", ball[i]);
+
+    return 0;
+}
